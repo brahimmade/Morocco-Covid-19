@@ -101,6 +101,10 @@ To get a local copy up and running follow these simple example steps.
    ```
    pip install -r requirements.txt
    ```
+6. Run the project : 
+	```
+	python run.py
+	```
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
