@@ -166,8 +166,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 ## Contact
 
 Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email@email_client.com
-
-Project Link: [https://github.com/github_username/repo_name](https://github.com/github_username/repo_name)
+Project Link: [https://github.com/brahimmade/Morocco-Covid-19](https://github.com/brahimmade/Morocco-Covid-19")
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -197,5 +196,5 @@ Project Link: [https://github.com/github_username/repo_name](https://github.com/
 [license-shield]: https://img.shields.io/github/license/github_username/repo_name.svg?style=for-the-badge
 [license-url]: https://github.com/github_username/repo_name/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/linkedin_username
+[linkedin-url]: https://linkedin.com/in/bellahcen-brahim
 [product-screenshot]: images/screenshot.png
