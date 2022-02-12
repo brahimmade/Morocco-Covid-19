@@ -97,7 +97,7 @@ To get a local copy up and running follow these simple example steps.
    ```
    env\Scripts\activate
    ```
-5. install the requirements : 
+5. Install the requirements : 
    ```
    pip install -r requirements.txt
    ```
