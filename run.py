@@ -1,4 +1,5 @@
 import os
+import tabula
 import requests
 from tqdm import tqdm
 from bs4 import BeautifulSoup
@@ -55,43 +56,48 @@ def get_all_reports_url(url_1,url_2, headers=None):
     print(f"Total {len(urls)} Reports Found!")
     return urls 
     
-def download(url, pathname, headers=None,):
+def download(url, path_pdf, path_csv, headers=None,):
     """ Downloads a file given an URL and puts it in the folder 'pathname' """
     if headers == None:
         header = {'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36'}
     else:
         header = headers
     # if path doesn't exist, make that path dir
-    if not os.path.isdir(pathname):
-        os.makedirs(pathname)
+    if not os.path.isdir(path_pdf):
+        os.makedirs(path_pdf)
+    if not os.path.isdir(path_csv):
+        os.makedirs(path_csv)
     # download the body of response by chunk, not immediately
     response = requests.get(url['url'], headers=header, stream=True)
     # get the total file size
     file_size = int(response.headers.get("Content-Length", 0))
     # get the file name
-    filename = os.path.join(pathname,f"{url['name']}.{url['url'].split('.')[-1]}")
+    pdffilename = os.path.join(path_pdf,f"{url['name']}.{url['url'].split('.')[-1]}")
+    csvfilename = os.path.join(path_csv,f"{url['name']}.csv")
     # progress bar, changing the unit to bytes instead of iteration (default by tqdm)
-    progress = tqdm(response.iter_content(1024), f"Downloading {filename}", total=file_size, unit="B", unit_scale=True, unit_divisor=1024)
-    with open(filename, "wb") as f:
+    progress = tqdm(response.iter_content(1024), f"Downloading {pdffilename}", total=file_size, unit="B", unit_scale=True, unit_divisor=1024)
+    with open(pdffilename, "wb") as f:
         for data in progress.iterable:
             # write data read to the file
             f.write(data)
             # update the progress bar manually
             progress.update(len(data))
-            
-def get_all_reports(url_1,url_2, path):
-    if not path:
+    tabula.convert_into(pdffilename, csvfilename, output_format="csv", pages='all')
+    
+    
+def get_all_reports(url_1,url_2, path_pdf='pdfs', path_csv='csvs'):
+    if not path_pdf or not path_csv:
         # if path isn't specified, use the domain name of that url as the folder name
         path = urlparse(urljoin(url_1, url_2)).netloc
     # get all reports
     reports = get_all_reports_url(url_1,url_2)
     # for each report, download it
     for report in reports:
-        download(report, path)
+        download(report, path_pdf, path_csv)
 
 
 # Test
 if __name__ == '__main__' :
     base_URL    = "http://www.covidmaroc.ma"
     reports_URL = "/Pages/LESINFOAR.aspx"
-    get_all_reports(base_URL, reports_URL, path='data')
+    get_all_reports(base_URL, reports_URL, path_pdf='pdfs', path_csv='csvs')

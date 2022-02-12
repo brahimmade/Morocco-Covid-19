@@ -1,8 +1,5 @@
 #folders
 env/
-pdfs/
-output/
-pdfBulletins/
 __pycache__/
 .vscode/
 
