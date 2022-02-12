@@ -76,27 +76,24 @@ To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
+* python
 
 ### Installation
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
+1. Clone the repo
    ```sh
-   git clone https://github.com/github_username/repo_name.git
+   git clone https://github.com/brahimmade/Morocco-Covid-19.git
    ```
-3. Install NPM packages
-   ```sh
-   npm install
+2. Unzip the file and cd into it : 
+   ```unzip Morocco-Covid-19-main; 
+   cd Morocco-Covid-19-main
    ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
-   ```
+3. Create a virtual environment for the project
+   ```python -m venv env```
+4. Activate the environment by running :
+   ```env\Scripts\activate```
+5. install the requirements : 
+   ```pip install -r requirements.txt```
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
