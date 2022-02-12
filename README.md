@@ -85,15 +85,22 @@ To get a local copy up and running follow these simple example steps.
    git clone https://github.com/brahimmade/Morocco-Covid-19.git
    ```
 2. Unzip the file and cd into it : 
-   ```unzip Morocco-Covid-19-main; 
+   ```
+   unzip Morocco-Covid-19-main 
    cd Morocco-Covid-19-main
    ```
 3. Create a virtual environment for the project
-   ```python -m venv env```
+   ```
+   python -m venv env
+   ```
 4. Activate the environment by running :
-   ```env\Scripts\activate```
+   ```
+   env\Scripts\activate
+   ```
 5. install the requirements : 
-   ```pip install -r requirements.txt```
+   ```
+   pip install -r requirements.txt
+   ```
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
