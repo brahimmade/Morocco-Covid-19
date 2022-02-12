@@ -82,7 +82,7 @@ def download(url, path_pdf, path_csv, headers=None,):
             f.write(data)
             # update the progress bar manually
             progress.update(len(data))
-    tabula.convert_into(pdffilename, csvfilename, output_format="csv", pages='all')
+    tabula.convert_into(pdffilename, csvfilename, output_format="csv", pages='all',java_options="-Dfile.encoding=UTF8")
     
     
 def get_all_reports(url_1,url_2, path_pdf='pdfs', path_csv='csvs'):
