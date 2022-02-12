@@ -1,0 +1,25 @@
+#folders
+env/
+pdfs/
+output/
+pdfBulletins/
+__pycache__/
+.vscode/
+
+
+# files beginning by "output"
+output*
+corona_random*
+
+
+#all csv files beginning by "corona_corona"
+corona_corona*
+
+#source files
+pdfreader.py
+timeformat.py
+pdfreader.py
+test-file.py
+test.py
+generate_date_random.py
+
