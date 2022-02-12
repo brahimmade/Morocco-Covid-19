@@ -165,7 +165,8 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email@email_client.com
+Bel-lahcen Brahim - brahimbellahcen@outlook.com
+
 Project Link: [https://github.com/brahimmade/Morocco-Covid-19](https://github.com/brahimmade/Morocco-Covid-19")
 
 <p align="right">(<a href="#top">back to top</a>)</p>
